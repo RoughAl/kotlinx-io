@@ -1,0 +1,18 @@
+kotlin {
+    targets {
+        fromPreset(presets.jvm, 'jvm')
+    }
+    sourceSets {
+        jvmMain.dependencies {
+            api 'org.jetbrains.kotlin:kotlin-stdlib'
+
+            api "org.jetbrains.kotlinx:atomicfu:$atomic_fu_version"
+            api group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: coroutines_version
+        }
+
+        jvmTest.dependencies {
+            api 'org.jetbrains.kotlin:kotlin-test'
+            api 'org.jetbrains.kotlin:kotlin-test-junit'
+        }
+    }
+}
